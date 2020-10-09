@@ -1,3 +1,3 @@
 const comments = require('./comments')
 
-modules.exports = { comments }
+module.exports = { comments }
