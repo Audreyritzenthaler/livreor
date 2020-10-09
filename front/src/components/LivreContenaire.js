@@ -1,9 +1,7 @@
-import React, { useState } from 'react'
-import axios from 'axios'
+import React from 'react'
 import CommentsInput from './CommentsInput'
 
 const LivreContenair = () => {
-  const [state, setState] = useState()
 
   return (
     <div>
