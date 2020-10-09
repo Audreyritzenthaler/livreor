@@ -15,7 +15,8 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
-    "expres": "0.0.5"
+    "expres": "0.0.5",
+    "mysql": "^2.18.1"
   },
   "devDependencies": {
     "eslint": "^7.10.0",
