@@ -1,11 +1,12 @@
 import React from 'react'
+import LivreContenair from './components/LivreContenaire'
 import './App.css'
-import CommentsInput from './components/CommentsInput'
 
 function App() {
   return (
     <div className="App">
-      <CommentsInput />
+      <h1 className='title'>Mon livre d'or</h1>
+      <LivreContenair />
     </div>
   )
 }
