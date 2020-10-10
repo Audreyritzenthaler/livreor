@@ -16,11 +16,17 @@ router.post('/', (req, res) => {
   if (req.body.message) {
     const comment = req.body
 
-    connection.query('INSERT INTO comments SET ?', comment, (err, result) => {
+    connection.query('INSERT INTO comments SET ?', comment, (err, stats) => {
       if (err) {
         return res.status(500).json({ error: 'Internal server error !' })
       } else {
-        return res.status(201).json({ response: 'Bien envoyé ! :)' })
+        const messageId = stats.insertId
+        const newMessage = {
+          id: messageId,
+          ...comment
+        }
+        console.log(newMessage)
+        return res.status(201).json(newMessage)
       }
     })
   } else {
