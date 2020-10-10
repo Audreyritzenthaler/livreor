@@ -18,7 +18,7 @@ const CommentsInput = () => {
       }
     })
       .then(setMessage(''))
-      .then((res) => toast.success('SUCCESS', {
+      .then((response) => toast.success(response.data.response, {
         position: "bottom-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -26,16 +26,30 @@ const CommentsInput = () => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        }))
-      .catch((erreur) => toast.error('ERROR', {
-        position: "bottom-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        }))
+      }))
+      .catch((error) => {
+        if (!message.length) {
+          toast.error('Pas de message :/', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          })
+        } else {
+          toast.error('Une erreur est survenue lors de la publication du message !', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          })
+        }
+      })
   }
 
   return (

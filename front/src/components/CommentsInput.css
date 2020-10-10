@@ -33,3 +33,11 @@ form {
   text-transform: uppercase;
   margin-left: auto;
 }
+
+.Toastify__toast--success {
+  background: #3a913d;
+}
+
+.Toastify__toast--error {
+  background: #d45547;
+}
