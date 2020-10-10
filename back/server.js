@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
   res.send({ message: 'YES successfully connected!' })
 })
 
-app.listen(process.env.PORT, error => {
+app.listen(process.env.PORT, (error) => {
   if (error) {
     console.log('Something bad happened...', error)
   } else {

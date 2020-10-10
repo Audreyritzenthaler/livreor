@@ -26,7 +26,6 @@ router.post('/', (req, res) => {
   } else {
     return res.status(400).json({ error: 'Write a message please !' })
   }
-
 })
 
 module.exports = router
