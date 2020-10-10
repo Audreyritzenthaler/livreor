@@ -8,7 +8,7 @@ const dbSettings = typeof process.env.CLEARDB_DATABASE_URL === 'string' ? proces
   database: process.env.DB_NAME
 } 
 
-const connection = mysql.createConnection(
+const connection = mysql.createPool(
   dbSettings
 )
 
