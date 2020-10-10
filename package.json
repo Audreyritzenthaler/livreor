@@ -5,7 +5,7 @@
   "main": "back/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+    "start": "node back/server.js",
     "lint": "eslint --fix routes/ server.js",
     "format": "prettier --write src/"
   },
