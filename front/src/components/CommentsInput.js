@@ -12,7 +12,7 @@ const CommentsInput = ({ submit, message, onChange }) => {
         className="inputComment"
         value={message}
         onChange={onChange}
-        placeholder=" Write your comment here !"
+        placeholder=" Ecris moi un commentaire ! :)"
         rows="5"
         cols="33"
       ></textarea>
