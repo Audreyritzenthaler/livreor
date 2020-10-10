@@ -20,11 +20,11 @@ router.post('/', (req, res) => {
       if (err) {
         return res.status(500).json({ error: 'Internal server error !' })
       } else {
-        return res.status(201).json({ response: 'Bien envoyé !' })
+        return res.status(201).json({ response: 'Bien envoyé ! :)' })
       }
     })
   } else {
-    return res.status(500).json({ error: 'Write a message please !' })
+    return res.status(400).json({ error: 'Write a message please !' })
   }
 
 })
