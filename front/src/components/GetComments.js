@@ -15,7 +15,7 @@ const GetComments = () => {
 
   useEffect(() => {
     getAllMessages()
-  }, [allMessages])
+  }, [])
 
   return (
     <div className="commentsList">
