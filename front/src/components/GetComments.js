@@ -9,7 +9,7 @@ const GetComments = () => {
 
   const getAllMessages = () => {
     axios
-      .get('http://localhost:8080/comments')
+      .get('/comments')
       .then((res) => setAllMessages(res.data))
   }
 

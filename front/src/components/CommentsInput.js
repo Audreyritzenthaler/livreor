@@ -12,7 +12,7 @@ const CommentsInput = () => {
     e.preventDefault()
     axios({
       method: 'post',
-      url: 'http://localhost:8080/comments',
+      url: '/comments',
       data: {
         message
       }
