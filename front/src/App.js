@@ -1,12 +1,12 @@
 import React from 'react'
-import LivreContenair from './components/LivreContenaire'
+import LivreContainer from './components/LivreContainer'
 import './App.css'
 
 function App() {
   return (
     <div className="App">
-      <h1 className='title'>Mon livre d'or</h1>
-      <LivreContenair />
+      <h1 className="title">Mon livre d‘or</h1>
+      <LivreContainer />
     </div>
   )
 }

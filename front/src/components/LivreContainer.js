@@ -1,13 +1,14 @@
 import React from 'react'
 import CommentsInput from './CommentsInput'
+import GetComments from './GetComments'
 
-const LivreContenair = () => {
-
+const LivreContainer = () => {
   return (
     <div>
+      <GetComments />
       <CommentsInput />
     </div>
-    )
+  )
 }
 
-export default LivreContenair
+export default LivreContainer

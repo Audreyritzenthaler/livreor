@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 import './CommentsInput.css'
 
@@ -18,36 +18,41 @@ const CommentsInput = () => {
       }
     })
       .then(setMessage(''))
-      .then((response) => toast.success(response.data.response, {
-        position: "bottom-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      }))
-      .catch((error) => {
+      .then((response) =>
+        toast.success(response.data.response, {
+          position: 'bottom-right',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined
+        })
+      )
+      .catch(() => {
         if (!message.length) {
           toast.error('Pas de message :/', {
-            position: "top-right",
+            position: 'top-right',
             autoClose: 5000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
-            progress: undefined,
+            progress: undefined
           })
         } else {
-          toast.error('Une erreur est survenue lors de la publication du message !', {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-          })
+          toast.error(
+            'Une erreur est survenue lors de la publication du message !',
+            {
+              position: 'top-right',
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined
+            }
+          )
         }
       })
   }
@@ -55,14 +60,16 @@ const CommentsInput = () => {
   return (
     <form onSubmit={submit}>
       <textarea
-        className='inputComment'
+        className="inputComment"
         value={message}
-        onChange={e => setMessage(e.target.value)}
-        placeholder=' Write your comment here !'
+        onChange={(e) => setMessage(e.target.value)}
+        placeholder=" Write your comment here !"
         rows="5"
-        cols="33">
-      </textarea>
-      <button className='inputBtn'>Commenter</button>
+        cols="33"
+      ></textarea>
+      <button className="inputBtn">
+        Commenter <i className="far fa-paper-plane"></i>
+      </button>
       <ToastContainer
         position="bottom-right"
         autoClose={5000}

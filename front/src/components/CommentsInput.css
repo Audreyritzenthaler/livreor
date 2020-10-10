@@ -25,13 +25,21 @@ form {
   width: 15%;
   margin-top: 3em;
   cursor: pointer;
-  background-color: rgb(0, 139, 93);
-  color: black;
+  background-color: rgb(88, 137, 243);
+  color: rgb(255, 255, 255);
   padding: 0.8em;
   border-radius: 10px;
   border: none;
   text-transform: uppercase;
   margin-left: auto;
+}
+
+.inputBtn:hover {
+  background-color: rgb(46, 75, 170);
+}
+
+.fa-paper-plane {
+  margin-left: 0.5em;
 }
 
 .Toastify__toast--success {

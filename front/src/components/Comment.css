@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.comment {
+  margin: 1em auto;
+  padding: 1em;
+  width: 90%;
+  border-bottom: 1px solid rgb(179, 179, 179);
+}

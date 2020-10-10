@@ -1,0 +1,7 @@
+.commentsList {
+  background-color: rgba(209, 226, 226, 0.486);
+  width: 50%;
+  margin: auto;
+  border-radius: 8px;
+  box-shadow: 3px 3px 10px rgb(209, 208, 208);
+}
