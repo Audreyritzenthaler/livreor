@@ -1,68 +1,17 @@
-import React, { useState } from 'react'
-import axios from 'axios'
-import { ToastContainer, toast } from 'react-toastify'
+import React from 'react'
+import { ToastContainer } from 'react-toastify'
+import PropTypes from 'prop-types'
 import 'react-toastify/dist/ReactToastify.css'
 
 import './CommentsInput.css'
 
-const CommentsInput = () => {
-  const [message, setMessage] = useState('')
-
-  const submit = (e) => {
-    e.preventDefault()
-    axios({
-      method: 'post',
-      url: '/comments',
-      data: {
-        message
-      }
-    })
-      .then(setMessage(''))
-      .then((response) =>
-        toast.success(response.data.response, {
-          position: 'bottom-right',
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined
-        })
-      )
-      .catch(() => {
-        if (!message.length) {
-          toast.error('Pas de message :/', {
-            position: 'top-right',
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined
-          })
-        } else {
-          toast.error(
-            'Une erreur est survenue lors de la publication du message !',
-            {
-              position: 'top-right',
-              autoClose: 5000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined
-            }
-          )
-        }
-      })
-  }
-
+const CommentsInput = ({ submit, message, onChange }) => {
   return (
     <form onSubmit={submit}>
       <textarea
         className="inputComment"
         value={message}
-        onChange={(e) => setMessage(e.target.value)}
+        onChange={onChange}
         placeholder=" Write your comment here !"
         rows="5"
         cols="33"
@@ -84,5 +33,9 @@ const CommentsInput = () => {
     </form>
   )
 }
+
+CommentsInput.propTypes = { message: PropTypes.string }
+CommentsInput.propTypes = { submit: PropTypes.func }
+CommentsInput.propTypes = { onChange: PropTypes.func }
 
 export default CommentsInput

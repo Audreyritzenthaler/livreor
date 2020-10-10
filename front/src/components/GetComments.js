@@ -1,22 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Comment from './Comment'
-import axios from 'axios'
+import PropTypes from 'prop-types'
 
 import './GetComments.css'
 
-const GetComments = () => {
-  const [allMessages, setAllMessages] = useState()
-
-  const getAllMessages = () => {
-    axios
-      .get('/comments')
-      .then((res) => setAllMessages(res.data))
-  }
-
-  useEffect(() => {
-    getAllMessages()
-  }, [])
-
+const GetComments = ({ allMessages }) => {
   return (
     <div className="commentsList">
       {allMessages
@@ -27,5 +15,7 @@ const GetComments = () => {
     </div>
   )
 }
+
+GetComments.propTypes = { allMessages: PropTypes.array }
 
 export default GetComments
